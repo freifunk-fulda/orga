@@ -1,50 +1,110 @@
 # Sicherheit in Freifunknetzen
-## Sind unverschlüsselte WLANs wirklich unsicherer?
-In den Medien wird es immer wieder propagiert und auch sonst überall hört man immer "Vorsicht vor offenen WLANs" oder "Achtung, verschlüsseln Sie ihr WLAN, damit Hacker keinen Zugriff darauf haben".
+## Die kleine Übersicht
+Für alle die, die nur grob wissen wollen, worauf zu achten ist:
 
-Falsch sind diese Aussagen nicht, soviel vorweg, aber das liegt eher daran, was sich in deinem Heimnetzwerk befindet.
-Heutzutage kann so ziemlich alles WLAN haben.
-Vom PC bis zum Toaster in der Küche.
-Damit die auch das tun, was sie tun, ist ihr Primärziel erstmal untereinander zu kommunizieren und ggf. noch Updates von der Hersteller-Webseite beziehen.
-Besonders die Kommunikation untereinander erfolgt innerhalb des eigenen Netzwerks häufig unverschlüsselt.
-Man verlässt sich hier darauf, dass z.B. eben gerade das WLAN bereits verschlüsselt ist und nur vertrauenswürdige Geräte Zugriff haben.
-Also zuhause das private WLAN verschlüsseln, ist in jedem Fall keine schlechte Idee.
-
-Freifunk stellt aber kein Heimnetzwerk dar, sondern ein eigenes "kleines" Internet (ein sogenanntes Metronet also Stadtnetzwerk) mit Anbindung an das "große" Internet, welches sie auch so schon kennen. Der Unterschied ist hierbei, dass Freifunk sehr auf Regionalität und Freiheit setzt.
-Es gibt keine klassischen Provider und es kostet auch nichts, Zugang zu erhalten, denn
-schließlich können sie ihren Freifunkknoten auch ohne eigenen Internetanschluss betreiben und einfach nur über andere Freifunkknoten eine Verbindung zum Netzwerk aufbauen.
-Die Gerätezielgruppe ist also etwas anders, als die in ihrem klassischen Heimnetzwerk.
-Die meisten Clientgeräte innerhalb des Freifunknetzes sind Smartphones, Tablets und Laptops.
-All dies sind Geräte, die sich oft auch so schon direkt im Internet befinden und somit auch nicht mehr oder weniger angreifbar sind also sonst.
-Hiermit werden dann außerdem meist Webseiten aufgerufen, vielleicht ein wenig über Skype oder Mumble kommuniziert und über diverse Chat-Applikationen miteinander Nachrichten ausgetauscht.
-Bei den gängigen Applikationen ist das offene WLAN also kein Problem.
-Denn die meisten Verbindungen funktionieren über HTTPS.
-Das S am Ende steht für Secure und bedeutet, dass die Kommunikation mit dem Webserver ohnehin verschlüsselt wird. unabhängig davon, ob sie sich in einem offenen oder verschlüsselten WLAN befinden. Und diese Verschlüsselung stellt für jeden Angreifer im WLAN erstmal eine ziemlich große Hürde da.
-HTTPS-Webseiten erkennst du in allen gängigen Browser am Schlosssymbol in der Adresszeile.
-Achte besonders dann auf das Schlosssymbol, wenn du Passwörter eingibst.
-Nicht nur im Freifunknetzwerk, sondern überall.
-
-Du fragst dich jetzt vielleicht, warum man Freifunk nicht einfach verschlüsselt und das Passwort z.B. auf die Flyer schreibt.
-Das Problem ist: Selbst ein als sicher geltendes WPA2-PSK, welches du zuhause nutzt, ist eben nur so lange sicher, wie nur die Leute das Passwort kennen, die auch keine schlechten Absichten haben.
-In Firmen sieht die Umgebung teilweise anders aus.
-Wenn du aber z.B. in einem Café ein verschlüsseltes WLAN betrittst, bei dem alle das gleiche Passwort nutzen, bist du auch nicht sicherer als in einem unverschlüsselten Netzwerk, wie dem Freifunk Netz. Im Freifunk sparst du dir nur das Tippen des Passworts und kannst dich überall wo es Freifunk gibt problemlos bewegen ohne das WLAN wechseln zu müssen. ;)
-
-Viele Firewall-Programme und auch die Windows-Firewall bieten für genau solche WLANs die Option des öffentlichen Netzwerks an.
-Diese Einstellung ist empfohlen, da sie versucht alle unnötigen Zugriffe von außen zu blockieren.
-
-Also alles in allem ist das Freifunk-Netzwerk eine sichere Sache, wenn man darauf achtet, dass die Firewall das Netzwerk als öffentliches ansieht und man darauf achtet HTTPS und TLS/SSL im Browser und für E-Mail Programme und andere Verbindungen zu benutzen.
-
-## Dinge auf die man achten sollte, wenn man in offenen/fremden Netzwerken unterwegs ist
+### Dinge auf die man achten sollte, wenn man in offenen/fremden Netzwerken unterwegs ist
 
 * Netzwerk als "öffentliches Netzwerk" in den Windows-Firewall Einstellungen markieren
 * Freigaben von Daten ins Netzwerk abschalten
 * HTTPS für alle Seiten, wo man sich anmeldet
 * SSL/TLS in E-Mail Programmen aktivieren
-* Bei Sicherheitswarnungen im Browser vorsichtig sein
+* Sicherheitswarnungen im Browser beherzigen
 * (optional) Verwenden von VPN
 
-## Dinge die man in offenen/fremden Netzwerken vermeiden sollte
+### Dinge die man in offenen/fremden Netzwerken vermeiden sollte
 
 * Filesharing
 * Öffnen von Ports
 * "Firmen-/Heimnetzwerk"-Einstellungen in den Windows-Firewall Einstellungen nutzen
+
+
+## WLAN Sicherheit
+### Was bedeutet das überhaupt?
+Bei der "WLAN-Sicherheit" bzw. richter der WLAN-Verschlüsselung handelt es sich 
+ausschließlich um die Verschlüsselung der durch die Luft übertragenen Daten 
+zwischen dem Client (Smartphone, Tablet, Laptop, etc.) und dem Accesspoint 
+("WLAN-Router", Freifunkknoten, etc.). Hierfür stehen verschiedene Mechanismen 
+zur Verfügung, die hier im Anschluss grob erklärt werden sollen.
+
+### WPA/PSK und WPA2/PSK
+Bei WPA/PSK und WPA2/PSK handelt es sich um die gängisten 
+Verschlüsselungsmethoden in Deutschland. Sie sind inzwischen als Nachfolger von 
+WEP die Hauptverschlüsselungsmechanismen für private WLANs. WPA beschreibt 
+hierbei, wie die Nachrichten verschlüsselt werden, aber der weit wichtigere 
+Teil ist das anhängsel PSK. PSK steht für Pre Shared Key. Der Schlüssel muss 
+also sowohl dem Accesspoint als auch dem Benutzer bekannt sein. Das Problem 
+hierbei ist, dass **jeder** Benutzer des Netzwerks **diesen für alle gleichen** 
+Schlüssel kennen muss, wodurch auch jeder, der den Schlüssel besitzt den 
+gesamten WLAN Verkehr mitlesen kann.
+
+### WPA/EAP und WPA2/EAP
+Hierbei handelt es sich um einen Standard, wie er in Firmen häufig verwendet 
+wird. Die Verschlüsselungsmethode ist die Gleiche, wie bei privaten WLANs auch. 
+Den Unterschied macht hier das EAP, welches für "Extensible Authentication 
+Protocol" steht und verschiedene Mechanismen bietet die Verschlüsselung zu 
+nutzen. Gängig ist hier die Anmeldung an einem WLAN, wie man es auch sonst 
+gewohnt ist, über einen Usernamen und ein Passwort, aber auch ein Zugriff über 
+ein Zertifikat ist möglich und hängt von der Konfiguration ab. 
+ 
+### Keine (offen/unverschlüsselt)
+Nun ja, wie der Name schon sagt, findet hier einfach keine Verschlüsselung 
+statt, der Zugriff ist also für jeden möglich und der Datenverkehr sichtbar.
+
+### Wozu brauchen wir eigentlich eine WLAN-Verschlüsselung?
+Die WLAN-Verschlüsselung soll unsere Daten und unsere Privatssphäre schützen. 
+Hierbei geht es aber weniger um die Daten, die wir direkt über das WLAN 
+übertragen, denn dafür sind andere Mechanismen zuständig, als viel mehr um die 
+Daten, die wir bereit stellen. 
+
+Zum Beispiel ist es inzwischen normal geworden, dass sich in privat Haushalten 
+ein sogenanntest NAS-System findet auf dem unter anderem private Bilder 
+befinden. Hier will man nicht unbedingt, dass diese für jeden einsehbar sind 
+und somit soll der Zugriff darauf geschützt werden. 
+
+Auch geschützt werden soll der Missbrauch unsereres Internetanschlusses, sodass 
+es eben zu den Problem der Störerhaftung kommt. Hierfür verwendet Freifunk 
+allerdings VPN, welches den Datenverkehr ja nicht über den Anschluss des 
+Freifunkbetreibers ins Internet entlässt, sondern an die Freifunkserver 
+übermittelt. So wird das Freifunknetzwerk und das Privatenetzwerk vollständig 
+getrennt und das offene WLAN stellt kein Sicherheitsrisiko mehr dar. 
+
+
+## Übertragungssicherheit
+### Was bedeutet Übertragungssicherheit?
+Bei Übertragungssicherheit, geht es darum, dass die Kommunikation zwischen dem 
+Sender und dem Empfanger vor Manipulation und Auslesen geschützt wird. Dies ist 
+besonders wichtig, wenn wichtige Daten, wie zum Beispiel Passwörter übermittelt 
+werden.
+
+Hierfür wird eine Ende-zu-Ende- Verschlüsselung verwendet. Der meist verwendete 
+Standard nennt sich SSL/TLS-
+
+### Wie funktioniert SSL/TLS grundlegend?
+SSL (Secure Sockets Layer) ist die ältere Bezeichnung für das heute aktuelle 
+TLS (Transport Layer Security). Hierbei geht es darum eine verschlüsselte 
+Verbindung zwischen dem Client und dem Server/Dienst aufzubauen. Hierfür wird 
+zunächst ausgehandelt welche Verschlüsselungen beide Seite beherrschen und 
+welche für alles nachfolgende verwendet werden soll. Außerdem wird 
+sichergestellt, dass die Gegenstellt auch wirklich die ist, die man erreichen 
+möchte. Sobald diese Verbindung besteht werden alle Daten vollständig 
+verschlüsselt zwischen den beiden Endpunkten übertragen. 
+
+### HTTPS - SSL/TLS fürs Web
+Mit dieser Technologie ist vermutlich jeder schonmal in Berührung gekommen. 
+Hierbei handelt es sich um die durch SSL/TLS gesicherte Variante des HTTP 
+Protokolls, welches die gängige Variante ist eine Webseite aufzurufen. 
+
+Man erkennt solche Verbindungen in erster Linie an dem Schlosssymbol im 
+Browser, oder daran, dass eine Adresse mit https:// beginnt.
+
+Sollte zum Beispiel von einem Browser festgestellt werden, dass eine Webseite 
+nicht die ist, die sie vorgibt zu sein, was durch SSL/TLS überprüft wird, so 
+wird eine große, gut sichtbare Warnung angezeigt.
+
+### Wozu brauchen wir SSL/TLS?
+SSL/TLS verhindert die Erfassung und Manipulation von Daten, die wir über 
+Netzwerkabschnitte übertragen, die abhört werden können oder denen wir nicht 
+vertrauen. Sei es ein offenes WLAN oder das Internet selbst. Dadurch, dass die 
+Strecke bis zur Anwendung auf beiden Seiten verschlüsselt ist, wird so 
+sichergestellt, dass keine Passwörter oder sensible Daten abhört oder 
+manipuliert werden können.
