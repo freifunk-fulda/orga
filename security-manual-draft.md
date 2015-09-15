@@ -2,7 +2,7 @@
 ## Die kleine Übersicht
 Für alle die, die nur grob wissen wollen, worauf zu achten ist:
 
-### Dinge auf die man achten sollte, wenn man in offenen/fremden Netzwerken unterwegs ist
+### Dinge in offenen/fremden Netzwerken beachten sollte
 
 * Netzwerk als "öffentliches Netzwerk" in den Windows-Firewall Einstellungen markieren
 * Freigaben von Daten ins Netzwerk abschalten
@@ -20,14 +20,14 @@ Für alle die, die nur grob wissen wollen, worauf zu achten ist:
 
 ## WLAN Sicherheit
 ### Was bedeutet das überhaupt?
-Bei der "WLAN-Sicherheit" bzw. richter der WLAN-Verschlüsselung handelt es sich 
-ausschließlich um die Verschlüsselung der durch die Luft übertragenen Daten 
-zwischen dem Client (Smartphone, Tablet, Laptop, etc.) und dem Accesspoint 
-("WLAN-Router", Freifunkknoten, etc.). Hierfür stehen verschiedene Mechanismen 
-zur Verfügung, die hier im Anschluss grob erklärt werden sollen.
+Bei der "WLAN-Sicherheit" bzw. richtiger der WLAN-Verschlüsselung handelt es 
+sich ausschließlich um die Verschlüsselung, der durch die Luft übertragenen 
+Daten, zwischen dem Client (Smartphone, Tablet, Laptop, etc.) und dem 
+Accesspoint ("WLAN-Router", Freifunkknoten, etc.). Hierfür stehen verschiedene 
+Mechanismen zur Verfügung, die hier im Anschluss grob erklärt werden sollen.
 
 ### WPA/PSK und WPA2/PSK
-Bei WPA/PSK und WPA2/PSK handelt es sich um die gängisten 
+Bei WPA/PSK und WPA2/PSK handelt es sich um die gängigsten 
 Verschlüsselungsmethoden in Deutschland. Sie sind inzwischen als Nachfolger von 
 WEP die Hauptverschlüsselungsmechanismen für private WLANs. WPA beschreibt 
 hierbei, wie die Nachrichten verschlüsselt werden, aber der weit wichtigere 
@@ -76,8 +76,8 @@ Sender und dem Empfanger vor Manipulation und Auslesen geschützt wird. Dies ist
 besonders wichtig, wenn wichtige Daten, wie zum Beispiel Passwörter übermittelt 
 werden.
 
-Hierfür wird eine Ende-zu-Ende- Verschlüsselung verwendet. Der meist verwendete 
-Standard nennt sich SSL/TLS-
+Hierfür wird eine Ende-zu-Ende-Verschlüsselung verwendet. Der meist verwendete 
+Standard nennt sich SSL/TLS.
 
 ### Wie funktioniert SSL/TLS grundlegend?
 SSL (Secure Sockets Layer) ist die ältere Bezeichnung für das heute aktuelle 
@@ -85,7 +85,7 @@ TLS (Transport Layer Security). Hierbei geht es darum eine verschlüsselte
 Verbindung zwischen dem Client und dem Server/Dienst aufzubauen. Hierfür wird 
 zunächst ausgehandelt welche Verschlüsselungen beide Seite beherrschen und 
 welche für alles nachfolgende verwendet werden soll. Außerdem wird 
-sichergestellt, dass die Gegenstellt auch wirklich die ist, die man erreichen 
+sichergestellt, dass die Gegenstelle auch wirklich die ist, die man erreichen 
 möchte. Sobald diese Verbindung besteht werden alle Daten vollständig 
 verschlüsselt zwischen den beiden Endpunkten übertragen. 
 
