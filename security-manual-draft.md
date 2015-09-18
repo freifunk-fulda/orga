@@ -31,7 +31,7 @@ Bei WPA/PSK und WPA2/PSK handelt es sich um die gängigsten
 Verschlüsselungsmethoden in Deutschland. Sie sind inzwischen als Nachfolger von 
 WEP die Hauptverschlüsselungsmechanismen für private WLANs. WPA beschreibt 
 hierbei, wie die Nachrichten verschlüsselt werden, aber der weit wichtigere 
-Teil ist das anhängsel PSK. PSK steht für Pre Shared Key. Der Schlüssel muss 
+Teil ist das Anhängsel PSK. PSK steht für Pre Shared Key. Der Schlüssel muss 
 also sowohl dem Accesspoint als auch dem Benutzer bekannt sein. Das Problem 
 hierbei ist, dass **jeder** Benutzer des Netzwerks **diesen für alle gleichen** 
 Schlüssel kennen muss, wodurch auch jeder, der den Schlüssel besitzt den 
@@ -57,14 +57,14 @@ Hierbei geht es aber weniger um die Daten, die wir direkt über das WLAN
 Daten, die wir bereit stellen. 
 
 Zum Beispiel ist es inzwischen normal geworden, dass sich in privat Haushalten 
-ein sogenanntest NAS-System findet auf dem unter anderem private Bilder 
-befinden. Hier will man nicht unbedingt, dass diese für jeden einsehbar sind 
-und somit soll der Zugriff darauf geschützt werden. 
+sogenannte NAS-System findet auf denen sich private Daten, wie zum Beispiel 
+Urlaubsbilder und ähnliches befinden. Hier will man nicht unbedingt, dass diese 
+für jeden einsehbar sind und somit soll der Zugriff darauf geschützt werden. 
 
-Auch geschützt werden soll der Missbrauch unsereres Internetanschlusses, sodass 
-es eben zu den Problem der Störerhaftung kommt. Hierfür verwendet Freifunk 
-allerdings VPN, welches den Datenverkehr ja nicht über den Anschluss des 
-Freifunkbetreibers ins Internet entlässt, sondern an die Freifunkserver 
+Auch geschützt werden soll der Missbrauch unseres Internetanschlusses, sodass 
+es eben nicht zu den Problem der Störerhaftung kommt. Hierfür verwendet Freifunk 
+allerdings VPN, welches den Datenverkehr nicht direkt über den Anschluss des 
+Freifunkknotenbetreibers ins Internet entlässt, sondern an die Freifunkserver 
 übermittelt. So wird das Freifunknetzwerk und das Privatenetzwerk vollständig 
 getrennt und das offene WLAN stellt kein Sicherheitsrisiko mehr dar. 
 
@@ -72,11 +72,8 @@ getrennt und das offene WLAN stellt kein Sicherheitsrisiko mehr dar.
 ## Übertragungssicherheit
 ### Was bedeutet Übertragungssicherheit?
 Bei Übertragungssicherheit, geht es darum, dass die Kommunikation zwischen dem 
-Sender und dem Empfanger vor Manipulation und Auslesen geschützt wird. Dies ist 
-besonders wichtig, wenn wichtige Daten, wie zum Beispiel Passwörter übermittelt 
-werden.
-
-Hierfür wird eine Ende-zu-Ende-Verschlüsselung verwendet. Der meist verwendete 
+Sender und dem Empfanger vor Manipulation und Auslesen geschützt wird. Hierfür 
+wird eine Ende-zu-Ende-Verschlüsselung verwendet. Der meist verwendete 
 Standard nennt sich SSL/TLS.
 
 ### Wie funktioniert SSL/TLS grundlegend?
@@ -94,8 +91,8 @@ Mit dieser Technologie ist vermutlich jeder schonmal in Berührung gekommen.
 Hierbei handelt es sich um die durch SSL/TLS gesicherte Variante des HTTP 
 Protokolls, welches die gängige Variante ist eine Webseite aufzurufen. 
 
-Man erkennt solche Verbindungen in erster Linie an dem Schlosssymbol im 
-Browser, oder daran, dass eine Adresse mit https:// beginnt.
+Man erkennt solche verschlüsselten Verbindungen in erster Linie an dem 
+Schlosssymbol im Browser und daran, dass eine Adresse mit https:// beginnt.
 
 Sollte zum Beispiel von einem Browser festgestellt werden, dass eine Webseite 
 nicht die ist, die sie vorgibt zu sein, was durch SSL/TLS überprüft wird, so 
