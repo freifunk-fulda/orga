@@ -1,15 +1,15 @@
 # Sicherheit in Freifunknetzen
 ## Die kleine Übersicht
-Für alle die, die nur grob wissen wollen, worauf zu achten ist:
 
 ### Dinge in offenen/fremden Netzwerken beachten sollte
 
 * Netzwerk als "öffentliches Netzwerk" in den Windows-Firewall Einstellungen markieren
 * Freigaben von Daten ins Netzwerk abschalten
-* HTTPS für alle Seiten, wo man sich anmeldet
+* HTTPS für Webseiten, an denen man sich anmeldet
 * SSL/TLS in E-Mail Programmen aktivieren
 * Sicherheitswarnungen im Browser beherzigen
 * (optional) Verwenden von VPN
+* Das Betriebssystem aktuell halten. D.h. Sicherheitsupdates regelmäßig installieren
 
 ### Dinge die man in offenen/fremden Netzwerken vermeiden sollte
 
@@ -56,9 +56,9 @@ Hierbei geht es aber weniger um die Daten, die wir direkt über das WLAN
 übertragen, denn dafür sind andere Mechanismen zuständig, als viel mehr um die 
 Daten, die wir bereit stellen. 
 
-Zum Beispiel ist es inzwischen normal geworden, dass sich in privat Haushalten 
-sogenannte NAS-System findet auf denen sich private Daten, wie zum Beispiel 
-Urlaubsbilder und ähnliches befinden. Hier will man nicht unbedingt, dass diese 
+Zum Beispiel ist es inzwischen normal geworden, dass sich in privaten Haushalten 
+sogenannte NAS-Systeme befinden auf denen private Daten, wie zum Beispiel 
+Urlaubsbilder und ähnliches gespeichert sind. Hier will man nicht unbedingt, dass diese 
 für jeden einsehbar sind und somit soll der Zugriff darauf geschützt werden. 
 
 Auch geschützt werden soll der Missbrauch unseres Internetanschlusses, sodass 
