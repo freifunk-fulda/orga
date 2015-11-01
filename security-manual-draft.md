@@ -62,7 +62,7 @@ Urlaubsbilder und ähnliches gespeichert sind. Hier will man nicht unbedingt, da
 für jeden einsehbar sind und somit soll der Zugriff darauf geschützt werden. 
 
 Auch geschützt werden soll der Missbrauch unseres Internetanschlusses, sodass 
-es eben nicht zu den Problem der Störerhaftung kommt. Hierfür verwendet Freifunk 
+es eben nicht zu dem Problem der Störerhaftung kommt. Hierfür verwendet Freifunk 
 allerdings VPN, welches den Datenverkehr nicht direkt über den Anschluss des 
 Freifunkknotenbetreibers ins Internet entlässt, sondern an die Freifunkserver 
 übermittelt. So wird das Freifunknetzwerk und das Privatenetzwerk vollständig 
@@ -71,14 +71,14 @@ getrennt und das offene WLAN stellt kein Sicherheitsrisiko mehr dar.
 
 ## Übertragungssicherheit
 ### Was bedeutet Übertragungssicherheit?
-Bei Übertragungssicherheit, geht es darum, dass die Kommunikation zwischen dem 
+Bei Übertragungssicherheit geht es darum, dass die Kommunikation zwischen dem 
 Sender und dem Empfanger vor Manipulation und Auslesen geschützt wird. Hierfür 
 wird eine Ende-zu-Ende-Verschlüsselung verwendet. Der meist verwendete 
 Standard nennt sich SSL/TLS.
 
 ### Wie funktioniert SSL/TLS grundlegend?
 SSL (Secure Sockets Layer) ist die ältere Bezeichnung für das heute aktuelle 
-TLS (Transport Layer Security). Hierbei geht es darum eine verschlüsselte 
+TLS (Transport Layer Security). Hierbei geht es darum, eine verschlüsselte 
 Verbindung zwischen dem Client und dem Server/Dienst aufzubauen. Hierfür wird 
 zunächst ausgehandelt welche Verschlüsselungen beide Seite beherrschen und 
 welche für alles nachfolgende verwendet werden soll. Außerdem wird 
@@ -87,7 +87,7 @@ möchte. Sobald diese Verbindung besteht werden alle Daten vollständig
 verschlüsselt zwischen den beiden Endpunkten übertragen. 
 
 ### HTTPS - SSL/TLS fürs Web
-Mit dieser Technologie ist vermutlich jeder schonmal in Berührung gekommen. 
+Mit dieser Technologie ist vermutlich jeder schon einmal in Berührung gekommen. 
 Hierbei handelt es sich um die durch SSL/TLS gesicherte Variante des HTTP 
 Protokolls, welches die gängige Variante ist eine Webseite aufzurufen. 
 
@@ -100,8 +100,8 @@ wird eine große, gut sichtbare Warnung angezeigt.
 
 ### Wozu brauchen wir SSL/TLS?
 SSL/TLS verhindert die Erfassung und Manipulation von Daten, die wir über 
-Netzwerkabschnitte übertragen, die abhört werden können oder denen wir nicht 
-vertrauen. Sei es ein offenes WLAN oder das Internet selbst. Dadurch, dass die 
-Strecke bis zur Anwendung auf beiden Seiten verschlüsselt ist, wird so 
-sichergestellt, dass keine Passwörter oder sensible Daten abhört oder 
+Netzwerkabschnitte übertragen, die abgehört werden können oder denen wir nicht 
+vertrauen - sei es ein offenes WLAN oder das Internet selbst. Dadurch, dass die 
+Strecke bis zur Anwendung auf beiden Seiten verschlüsselt ist, wird 
+sichergestellt, dass keine Passwörter oder sensible Daten abgehört oder 
 manipuliert werden können.
