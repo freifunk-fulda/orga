@@ -1,4 +1,4 @@
-# Sicherheit in Freifunknetzen
+# Sicherheit in öffentlichen Netzen
 ## Die kleine Übersicht
 
 ### Dinge in offenen/fremden Netzwerken beachten sollte
